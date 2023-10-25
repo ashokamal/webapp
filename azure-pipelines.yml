@@ -13,11 +13,6 @@ trigger:
     projectKey: 'testdemoproject_testdemoproject'
 
 
-- task: SonarCloudAnalyze@1
-  inputs:
-    jdkversion: 'JAVA_HOME_17_X64'
-pool:
-  vmImage: ubuntu-latest
 
 steps:
 - script: echo Hello, world!
@@ -27,3 +22,10 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
+
+
+- task: SonarCloudAnalyze@1
+  inputs:
+    jdkversion: 'JAVA_HOME_17_X64'
+pool:
+  vmImage: ubuntu-latest
